@@ -41,3 +41,29 @@ function recorrerAmigos(){
         lista.appendChild(li);
     }
 }
+
+//  Selecciona de manera aleatorio uno de los nombres en el array amigos.
+function sortearAmigo(){
+
+    //  Validar que halla al menos un amigo.
+    if (amigos.length === 0){
+        alert('Agrega un amigo antes de sortear.')
+        return;
+    }
+
+    //  Indice aleatorio.
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    console.log(indiceAleatorio);
+
+    //  Nombre aleatorio de la lista.
+    let nombreSorteado = amigos[indiceAleatorio];
+
+    let lista = document.getElementById("resultado");
+
+    //Vaciamos lista.
+    lista.innerHTML = "";
+
+    let li = document.createElement("li");
+    li.textContent = nombreSorteado;
+    lista.appendChild(li);
+}
